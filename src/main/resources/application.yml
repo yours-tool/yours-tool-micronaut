@@ -1,7 +1,28 @@
 micronaut:
+  server:
+    port: 8990
   application:
     name: yoursToolMicronaut
+
+datasources:
+
+jpa:
+  default:
+    entity-scan:
+      packages:
+        - 'yours.tool.micronaut.pojo.entity'
+    properties:
+      hibernate:
+        connection:
+          url: jdbc:postgresql:database # Use JDBC style url
+          username: myUsername
+          password: myPassword
+        hbm2ddl:
+          auto: update
+        show_sql: true
+
 netty:
   default:
     allocator:
       max-order: 3
+

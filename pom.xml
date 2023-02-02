@@ -30,6 +30,36 @@
   </repositories>
 
   <dependencies>
+
+<!--    <dependency>-->
+<!--      <groupId>io.micronaut.sql</groupId>-->
+<!--      <artifactId>micronaut-jdbc-hikari</artifactId>-->
+<!--      <scope>runtime</scope>-->
+<!--    </dependency>-->
+
+<!--    <dependency>-->
+<!--      <groupId>io.micronaut.sql</groupId>-->
+<!--      <artifactId>micronaut-hibernate-jpa</artifactId>-->
+<!--    </dependency>-->
+
+    <dependency>
+      <groupId>io.micronaut.beanvalidation</groupId>
+      <artifactId>micronaut-hibernate-validator</artifactId>
+    </dependency>
+
+    <!-- Google JAVA工具类 -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>30.1-jre</version>
+    </dependency>
+
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-all</artifactId>
+      <version>5.8.11</version>
+    </dependency>
+
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-inject</artifactId>
