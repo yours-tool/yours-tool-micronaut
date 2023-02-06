@@ -23,7 +23,6 @@ public class CountDownController {
 
     @Post(value = "add") //
     public ResultResponse<Void> addCountDown(@Body @Valid CountDownDto countDownDto) {
-        System.err.println(countDownDto.getDate());
         countDownService.addCountDown(countDownDto);
         return ResultResponse.ofSuccess(null);
     }

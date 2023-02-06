@@ -5,18 +5,25 @@ micronaut:
     name: yoursToolMicronaut
 
 datasources:
+  default:
+    url: jdbc:mysql://192.168.0.174:3306/yours-tool?useUnicode=true&characterEncoding=UTF-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&tinyInt1isBit=false&allowPublicKeyRetrieval=true
+    db-type: mysql
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: wswbh
+    minPoolSize: 1
+    maxPoolSize: 10
+#    type: com.zaxxer.hikari.HikariDataSource
+
 
 jpa:
   default:
     entity-scan:
       packages:
         - 'yours.tool.micronaut.pojo.entity'
+      classpath: true
     properties:
       hibernate:
-        connection:
-          url: jdbc:postgresql:database # Use JDBC style url
-          username: myUsername
-          password: myPassword
         hbm2ddl:
           auto: update
         show_sql: true
@@ -26,3 +33,7 @@ netty:
     allocator:
       max-order: 3
 
+logger:
+  config: logback.xml
+  levels:
+#    io.verbose.logger.who.CriedWolf: OFF
