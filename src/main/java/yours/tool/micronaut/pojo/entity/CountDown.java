@@ -2,6 +2,8 @@ package yours.tool.micronaut.pojo.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * @description:
@@ -17,9 +19,9 @@ public class CountDown implements Serializable {
      * 倒计时id
      */
     @Id
-    @Column(name = "count_down_id" )
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+//    @Column(name = "count_down_id" )
+//    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long countDownId;
 
     /**
      * 用户id
@@ -40,17 +42,29 @@ public class CountDown implements Serializable {
     private String type;
 
     /**
-     * 用户名
+     * 日期
      */
-    @Column(name = "username" )
-    private String username;
+    @Column(name = "date" )
+    private Date date;
 
-    public Long getId() {
-        return id;
+    /**
+     * 标签
+     */
+    @Column(name = "label")
+    private String label;
+
+    /**
+     * 金钱
+     */
+    @Column(name = "money")
+    private BigDecimal money;
+
+    public Long getCountDownId() {
+        return countDownId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCountDownId(Long countDownId) {
+        this.countDownId = countDownId;
     }
 
     public Long getUserId() {
@@ -77,11 +91,27 @@ public class CountDown implements Serializable {
         this.type = type;
     }
 
-    public String getUsername() {
-        return username;
+    public Date getDate() {
+        return date;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public BigDecimal getMoney() {
+        return money;
+    }
+
+    public void setMoney(BigDecimal money) {
+        this.money = money;
     }
 }

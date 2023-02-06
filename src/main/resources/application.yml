@@ -1,32 +1,39 @@
 micronaut:
   server:
     port: 8990
+    cors:
+      enabled: false
   application:
     name: yoursToolMicronaut
 
 datasources:
   default:
     url: jdbc:mysql://192.168.0.174:3306/yours-tool?useUnicode=true&characterEncoding=UTF-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&tinyInt1isBit=false&allowPublicKeyRetrieval=true
+    #url: jdbc:mysql://192.168.0.174:3306/yours-tool?ucharacterEncoding=UTF-8&useUnicode=true&autoReconnect=true
     db-type: mysql
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: wswbh
     minPoolSize: 1
     maxPoolSize: 10
+    dialect: MYSQL
 #    type: com.zaxxer.hikari.HikariDataSource
 
+#hibernate_sequences:
+#  sequence_name: zl
 
 jpa:
   default:
     entity-scan:
       packages:
         - 'yours.tool.micronaut.pojo.entity'
-      classpath: true
+#      classpath: true
     properties:
       hibernate:
-        hbm2ddl:
-          auto: update
+#        hbm2ddl:
+#          auto: update
         show_sql: true
+        use_sql_comments: true
 
 netty:
   default:

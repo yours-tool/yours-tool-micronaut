@@ -1,4 +1,6 @@
 package yours.tool.micronaut.service.impl;
+import java.math.BigDecimal;
+import java.util.Date;
 
 import cn.hutool.core.util.IdUtil;
 import jakarta.inject.Inject;
@@ -26,11 +28,13 @@ public class CountDownServiceImpl implements CountDownService {
     @Override
     public void addCountDown(CountDownDto countDownDto) {
         CountDown countDown = new CountDown();
-        countDown.setId(IdUtil.getSnowflakeNextId());
+        countDown.setCountDownId(IdUtil.getSnowflakeNextId());
         countDown.setUserId(1L);
-        countDown.setSubject(countDown.getSubject());
-        countDown.setType(countDown.getType());
-        countDown.setUsername(countDown.getUsername());
+        countDown.setSubject("111");
+        countDown.setType("11111");
+        countDown.setDate(new Date());
+        countDown.setLabel("");
+        countDown.setMoney(new BigDecimal("0"));
 
         countDownRepository.save(countDown);
 

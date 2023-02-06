@@ -16,7 +16,7 @@ import java.util.List;
  * @data 2023/2/2 14:36
  * @version: v1.0
  **/
-//@Introspected
+@Introspected
 public class CountDownDto extends BaseDto {
 
     @NotBlank(message = "主题不能为空")
