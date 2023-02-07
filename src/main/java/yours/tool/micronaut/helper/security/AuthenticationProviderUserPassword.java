@@ -17,14 +17,17 @@
 //@Singleton
 //public class AuthenticationProviderUserPassword implements AuthenticationProvider {
 //
+//
 //    @Override
 //    public Publisher<AuthenticationResponse> authenticate(HttpRequest<?> httpRequest, AuthenticationRequest<?, ?> authenticationRequest) {
-//        return Mono.<AuthenticationResponse>create(emitter -> {
-//            if (authenticationRequest.getIdentity().equals("user") && authenticationRequest.getSecret().equals("password")) {
-//                emitter.success(AuthenticationResponse.success("user"));
+//        return Flowable.create(emitter -> {
+//            if (authenticationRequest.getIdentity().equals("sherlock") &&
+//                    authenticationRequest.getSecret().equals("password")) {
+//                emitter.onNext(new UserDetails((String) authenticationRequest.getIdentity(), new ArrayList<>()));
+//                emitter.onComplete();
 //            } else {
-//                emitter.error(AuthenticationResponse.exception());
+//                emitter.onError(new AuthenticationException(new AuthenticationFailed()));
 //            }
-//        });
+//        }, BackpressureStrategy.ERROR);
 //    }
 //}
