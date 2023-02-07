@@ -22,13 +22,16 @@ public class CountDownDto extends BaseDto {
     @NotBlank(message = "主题不能为空")
     private String subject;
 
+    @NotBlank(message = "类型不能为空")
     private String type;
 
+    @NotBlank(message = "日期不能为空")
     private Date date;
 
     private List<String> label = Lists.newArrayList();
 
-    private BigDecimal money;
+
+    private BigDecimal money = new BigDecimal(0);
 
     public String getSubject() {
         return subject;

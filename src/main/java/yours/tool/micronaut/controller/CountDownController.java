@@ -21,7 +21,7 @@ public class CountDownController {
     @Inject
     private CountDownService countDownService;
 
-    @Post(value = "add") //
+    @Post(value = "add")
     public ResultResponse<Void> addCountDown(@Body @Valid CountDownDto countDownDto) {
         countDownService.addCountDown(countDownDto);
         return ResultResponse.ofSuccess(null);

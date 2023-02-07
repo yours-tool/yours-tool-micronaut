@@ -19,32 +19,32 @@ public class CountDown implements Serializable {
      * 倒计时id
      */
     @Id
-//    @Column(name = "count_down_id" )
-//    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "count_down_id")
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long countDownId;
 
     /**
      * 用户id
      */
-    @Column(name = "user_id" )
+    @Column(name = "user_id")
     private Long userId;
 
     /**
      * 主题
      */
-    @Column(name = "subject" )
+    @Column(name = "subject")
     private String subject;
 
     /**
      * 类型
      */
-    @Column(name = "type" )
+    @Column(name = "type")
     private String type;
 
     /**
      * 日期
      */
-    @Column(name = "date" )
+    @Column(name = "date")
     private Date date;
 
     /**

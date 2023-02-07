@@ -53,7 +53,7 @@
         <dependency>
             <groupId>io.micronaut.sql</groupId>
             <artifactId>micronaut-jdbc-hikari</artifactId>
-            <scope>runtime</scope>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -62,16 +62,11 @@
             <scope>compile</scope>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>io.micronaut.beanvalidation</groupId>-->
-<!--            <artifactId>micronaut-hibernate-validator</artifactId>-->
-<!--        </dependency>-->
-
         <dependency>
-            <groupId>io.micronaut</groupId>
-            <artifactId>micronaut-validation</artifactId>
-            <scope>compile</scope>
+            <groupId>io.micronaut.security</groupId>
+            <artifactId>micronaut-security-jwt</artifactId>
         </dependency>
+
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>micronaut-http-client</artifactId>
@@ -93,7 +88,7 @@
             <scope>compile</scope>
         </dependency>
         <!--日志包-->
-         <dependency>
+        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <scope>runtime</scope>
@@ -117,10 +112,10 @@
 
     <build>
         <plugins>
-<!--            <plugin>-->
-<!--                <groupId>io.micronaut.build</groupId>-->
-<!--                <artifactId>micronaut-maven-plugin</artifactId>-->
-<!--            </plugin>-->
+            <!--            <plugin>-->
+            <!--                <groupId>io.micronaut.build</groupId>-->
+            <!--                <artifactId>micronaut-maven-plugin</artifactId>-->
+            <!--            </plugin>-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -136,18 +131,16 @@
                             <artifactId>micronaut-data-processor</artifactId>
                             <version>${micronaut.version}</version>
                         </path>
-<!--                        <path>-->
-<!--                            <groupId>io.micronaut.openapi</groupId>-->
-<!--                            <artifactId>micronaut-openapi</artifactId>-->
-<!--                            <version>4.8.2</version>-->
-<!--                        </path>-->
+                        <path>
+                            <groupId>io.micronaut.security</groupId>
+                            <artifactId>micronaut-security-annotations</artifactId>
+                            <version>3.9.0</version>
+                        </path>
                     </annotationProcessorPaths>
                     <compilerArgs>
-                        <arg>-J-Dmicronaut.openapi.views.spec=rapidoc.enabled=true,swagger-ui.enabled=true,swagger-ui.theme=flattop</arg>
-                        <!--            <arg>-Amicronaut.openapi.views.spec=rapidoc.enabled=true,swagger-ui.enabled=true,swagger-ui.theme=flattop</arg>-->
                         <arg>-J-Dmicronaut.openapi.property.naming.strategy=SNAKE_CASE</arg>
-                        <arg>-Amicronaut.processing.group=pandora.cloud.framework</arg>
-                        <arg>-Amicronaut.processing.module=pandora-cloud-framework</arg>
+                        <arg>-Amicronaut.processing.group=yours.tool.micronaut</arg>
+                        <arg>-Amicronaut.processing.module=yours-tool-micronaut</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
